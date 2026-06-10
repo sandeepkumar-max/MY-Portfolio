@@ -5,7 +5,7 @@ export const sandeepAbout = {
   location: 'Samastipur, Bihar, India',
   role: 'Aspiring Software Developer',
   email: 'sandeepkumar28wu@gmail.com',
-  whatsapp: '916299105432', // Mock dynamic link setup helper or use general standard contact
+  whatsapp: '918406936028',
   github: 'https://github.com/SandeepKumarSamastipur', // Placeholder profile
   linkedin: 'https://linkedin.com/in/sandeep-samastipur', // Placeholder profile
   avatar: 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?auto=format&fit=crop&q=80&w=600&h=750',
