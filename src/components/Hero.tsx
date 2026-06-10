@@ -189,12 +189,12 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: 'spring', stiffness: 100, delay: 0.2 }}
-            className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] xl:w-[360px] xl:h-[470px] mt-8 mb-8"
+            className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] xl:w-[360px] xl:h-[470px] mt-10 mb-14"
           >
             {/* Background glowing frame */}
             <div className="absolute -inset-4 rounded-[40px] bg-gradient-to-tr from-sky-400 via-indigo-500 to-purple-600 opacity-20 blur-xl animate-pulse" />
 
-            {/* Main photo card - overflow hidden only for the image */}
+            {/* Main photo card */}
             <div className="absolute inset-0 rounded-[32px] bg-slate-900 border-2 border-white/10 glow-card glow-card-active shadow-[0_20px_50px_rgba(15,23,42,0.8)] overflow-hidden">
               <img
                 src={avatarSrc}
@@ -203,21 +203,20 @@ export default function Hero() {
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-top grayscale-[10%] brightness-[98%] hover:scale-105 duration-700 ease-out"
               />
+              {/* Name badge — inside card at very bottom, uses overflow of card */}
+              <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-slate-950/85 backdrop-blur-md border-t border-white/10 flex items-center gap-3">
+                <div className="relative flex items-center justify-center w-4 h-4 shrink-0">
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping absolute" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-display font-bold text-xs text-white">Sandeep Kumar</h4>
+                  <p className="font-mono text-[10px] text-slate-400">Bihar, India 🇮🇳</p>
+                </div>
+              </div>
             </div>
 
-            {/* Name badge — bottom inside card, pinned to card bottom edge */}
-            <div className="absolute bottom-0 left-3 right-3 px-4 py-3 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/10 flex items-center gap-3">
-              <div className="relative flex items-center justify-center w-4 h-4 shrink-0">
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping absolute" />
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-              </div>
-              <div className="text-left">
-                <h4 className="font-display font-bold text-xs text-white">Sandeep Kumar</h4>
-                <p className="font-mono text-[10px] text-slate-400">Bihar, India 🇮🇳</p>
-              </div>
-            </div>
-
-            {/* Top-right floating badge — positioned outside card */}
+            {/* Top-right floating badge */}
             <div className="absolute -top-5 -right-6 bg-slate-900/95 backdrop-blur-md border border-sky-400/30 rounded-2xl px-4 py-2.5 shadow-xl select-none flex items-center gap-2 z-10">
               <span className="text-xl">🚀</span>
               <div className="text-left">
@@ -226,8 +225,8 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Bottom-left floating badge — positioned outside card */}
-            <div className="absolute -bottom-5 -left-6 bg-slate-900/95 backdrop-blur-md border border-sky-400/30 rounded-2xl px-4 py-2.5 shadow-xl select-none flex items-center gap-2 z-10">
+            {/* Bottom-right floating badge — moved to RIGHT so no overlap with name badge */}
+            <div className="absolute -bottom-11 -right-6 bg-slate-900/95 backdrop-blur-md border border-sky-400/30 rounded-2xl px-4 py-2.5 shadow-xl select-none flex items-center gap-2 z-10">
               <span className="text-xl">🎓</span>
               <div className="text-left">
                 <p className="font-mono text-[9px] uppercase tracking-wider text-sky-400 font-bold">Status</p>
